@@ -2148,10 +2148,10 @@ function LogoInterpreter(turtle, stream, savehook)
   //----------------------------------------------------------------------
   // 6.1 Turtle Motion
 
-  def(["forward", "fd"], function(a) { return turtle.move(aexpr(a)); });
-  def(["back", "bk"], function(a) { return turtle.move(-aexpr(a)); });
-  def(["left", "lt"], function(a) { return turtle.turn(-aexpr(a)); });
-  def(["right", "rt"], function(a) { return turtle.turn(aexpr(a)); });
+  def(["forward", "fd"], function(a) { return turtle.forward(aexpr(a)); });
+  def(["back", "bk"], function(a) { return turtle.back(aexpr(a)); });
+  def(["left", "lt"], function(a) { return turtle.left(aexpr(a)); });
+  def(["right", "rt"], function(a) { return turtle.right(aexpr(a)); });
 
   // Left arrow:
   def(["\u2190"], function() { return turtle.turn(-15); });

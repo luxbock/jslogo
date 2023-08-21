@@ -367,6 +367,22 @@
       return 90 - rad2deg(Math.atan2(y - this.y, x - this.x));
     }},
 
+    forward: {value: function(d) {
+      this.move(d);
+    }},
+
+    back: {value: function(d) {
+      this.move(-d);
+    }},
+
+    right: {value: function(d) {
+      this.turn(d);
+    }},
+
+    left: {value: function(d) {
+      this.turn(-d);
+    }},
+
     clearscreen: {value: function() {
       this.home();
       this.clear();
@@ -489,6 +505,11 @@
     }},
 
     // Properties
+
+    pappyon : {
+      get: function() { return this._pappy },
+      set: function(mode) { this._pappy = mode },
+    },
 
     pendown: {
       set: function(down) { this._down = down; },
