@@ -596,10 +596,14 @@ window.addEventListener('DOMContentLoaded', function() {
 
   var canvas_element = $("#sandbox"), canvas_ctx = canvas_element.getContext('2d'),
       turtle_element = $("#turtle"), turtle_ctx = turtle_element.getContext('2d');
-  turtle = new CanvasTurtle(
+  canvas_turtle = new CanvasTurtle(
     canvas_ctx,
     turtle_ctx,
     canvas_element.width, canvas_element.height, $('#overlay'));
+
+  logger = new LoggerTurtle();
+
+  turtle = new ComboTurtle([canvas_turtle, logger]);
 
   logo = new LogoInterpreter(
     turtle, stream,
